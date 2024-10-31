@@ -118,7 +118,7 @@
                 - O(k**n) - exponential
             - Special group of algorithms
                 NP (complete) - non-deterministic, polynomial
-    - Exercise
+    - Exercise 1
         Collatz - Number/Sequence
         there is some integer n
 
@@ -132,3 +132,13 @@
         For the experts:
             Find the biggest length of Collatz Sequence between
             1 and 1'000'000
+
+    - Exercise 2
+
+        Write a guessing game, where the computer randomly choose
+        a secret number and the user can guess this number
+        a) let the user know if the number is lower or higher
+        b) MasterMind:
+            - give a star (*) when a digit is correct and in its correct position
+            - give a circle (o) when a digit is present, but on a wrong position
+            e.g. secret number is 4713, guess uis 2739: *o--

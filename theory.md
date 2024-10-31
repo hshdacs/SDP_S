@@ -76,3 +76,29 @@
     - Setup **private** repository
     - Add team mate and **hshdacs** as collaborator
 - Coding
+
+#### Fundamentals (of Programming) - Continuation
+
+- Algorithm
+    - Euclid (Elements)
+    When (c,d) is not (a,b), and taken alternating (a,b) or (c,d) the
+    smallest from the tallest, then it will eventually remain a number
+    that measures both of the previous.
+    aka GCD (greates common divider)
+    e.g. (a,b) = 24, (c,d) = 16
+    1) 24 != 16
+    2) 24 > 16
+    3) (a,b) set to 24 - 16 = 8
+    4) 8 != 16
+    5) 8 < 16
+    6) (c,d) set to 16 - 8 = 8
+    7) 8 == 8
+    - Formalism of Algorithms
+        - Pseudo Code
+            (in theory there is no rule for pseudo code, but use same words for the single steps of the algorithm)
+            (a, b) => x, (c, d) => y
+            while x != y
+                if x > y : x = x - y
+                otherwise: y = y - x
+        - Flowchart
+        - Nassi-Schneiderman Diagram (Struktogramm)

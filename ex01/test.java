@@ -6,7 +6,7 @@ public class test {
         b++;
         System.out.println(b);
 
-        double f = 1.0 / 2;
+        double f = 1 / 2;
         System.out.println(f);
 
         float x = 0.1F;

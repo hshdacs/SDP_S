@@ -67,3 +67,12 @@
     - Sequence
     - Condition (if, switch)
     - Loop (while, for, do-while)
+
+### Session 3
+31.10.2024
+
+- Teams
+- GitHub
+    - Setup **private** repository
+    - Add team mate and **hshdacs** as collaborator
+- Coding

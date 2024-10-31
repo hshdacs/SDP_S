@@ -5,7 +5,7 @@ public class Euclid {
         
         // We need to variables
         int a = 132342;
-        int b = 252141;
+        int b = 344354;
 
         while ( a != b ) {
             if ( a > b ) {
@@ -14,6 +14,12 @@ public class Euclid {
             else {
                 b = b - a;
             }
+        }
+
+        byte x = 5;
+        while ( x > 0 ) {
+            a = x * b;
+            x++;
         }
 
         System.out.println("a is " + a);

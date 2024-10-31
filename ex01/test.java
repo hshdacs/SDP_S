@@ -2,7 +2,7 @@ package ex01;
 
 public class test {
     public static void main(String[] args) {
-        short b = 32767;
+        byte b = 127;
         b++;
         System.out.println(b);
 

@@ -102,3 +102,33 @@
                 otherwise: y = y - x
         - Flowchart
         - Nassi-Schneiderman Diagram (Struktogramm)
+    - Characteristics of Algorithms
+        - Determinism
+        - Determination
+        - Termination
+        - Effectiveness
+        - Complexity (Time & Space)
+            - Landau Notation
+                - O(1) - constant calculation
+                - O(log2 n) - logarithmic calculation
+                - O(n) - linear
+                - O(n * log2 n) - linearithmic
+                - O(n²) - square
+                - O(n**k) - polynomial
+                - O(k**n) - exponential
+            - Special group of algorithms
+                NP (complete) - non-deterministic, polynomial
+    - Exercise
+        Collatz - Number/Sequence
+        there is some integer n
+
+        while (n != 1)
+            if (n is even): n = n/2
+            otherwise: n = 3*n + 1
+
+        The big question is, will this algorith terminate for
+        every number of n?
+
+        For the experts:
+            Find the biggest length of Collatz Sequence between
+            1 and 1'000'000

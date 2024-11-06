@@ -187,7 +187,7 @@
     - Practical issues
         - Constructor (ctor)
             - standard constructor receive values for all attributes
-            - default constructor (w/o parameter) is automaticall given if no ctor is provided, but will vanish if at lease one ctor is given
+            - default constructor (w/o parameter) is automaticall given if no ctor is provided, which will call the super ctor w/o parameters, but will vanish if at lease one ctor is given
             - every other (overloaded) ctor will use the standard ctor (DRY - Don't repeat yourself)
         - Self reference
             - this : Reference to the own object in current context (class)

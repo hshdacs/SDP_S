@@ -201,3 +201,15 @@
         and some methods: add, sub, mult, div, reciprocal, reduce,
         and two constructor with one and two parameters
 
+    Exercise 3 : Kingdom
+        In a kingdom there are residents who must pay taxes, at 1/10 of its income,
+        but at least 1 coin.
+        But there a other residents with benefits, who pay other taxes, e.g.
+            - king : pays only 1 coin, as his/her income is 0
+            - noble : pays at least 20 coins
+            - pawn : pays as a normal resident
+            - adscript: pays normal as resident, but his/her income is deducted by 12 coins
+        There is a resident hierachy
+            resident : king, noble, pawn
+            pawn : adscript
+        The resident is a class with two attributes (name, income), and has a method called "taxes()", which shows how much this resident has to pay tax!

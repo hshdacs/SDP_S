@@ -8,7 +8,6 @@ public class GuessingGame {
 
         int secretNumber = (int)(9000*Math.random()) + 1000;
         // check for double digits
-        System.out.println("!!! " + secretNumber + "!!!");
 
         int numberOfTries = 0;
         while (true) {

@@ -142,3 +142,62 @@
             - give a star (*) when a digit is correct and in its correct position
             - give a circle (o) when a digit is present, but on a wrong position
             e.g. secret number is 4713, guess uis 2739: *o--
+
+### Session 4
+06.11.2024
+
+- Recall last session
+    - Datatypes
+        - Primitives (boolean, byte, short, char, int, long, float, double)
+        - Complex (all others)
+            - Array (aka Field, Vector)
+            - Object
+    - Flow Control
+        - Loops (while, for, break, continue)
+        - Decisions (if, else)
+    - Methods
+        - Structure: Head Body
+            - Head: Signature and some other stuff
+                e.g. public static void main(String[] args)
+                     ------------------ +++++++++++++
+                Signature: Name of method + Datatypes of Parameters
+            - Body enclosed in curly brackets (can be omitted)
+        - Call paradigms
+            - Call by Value (all primitive datatypes)
+            - Call by Reference (all others)
+    
+- Object Oriented Programming
+    - Class (is a new compound datatype)
+        is a template/blueprint for objects
+        - what kind of information is required: attribute (member, field, property)
+        - behaviour: method (operation, messages)
+    - Object (created based on a class)
+        - it contains the values for the attributes
+        - but behaviour is still defined in the class
+    - Main concept of OOP:
+        Model the real world to be present in software,
+        and binding data and operation together
+        - Encapsulation (aka information hiding): Private, Public
+            -> **Every attribute must be private, and only necessary methods could be public**
+        - Inheritance
+            - code can be reused
+            - hiearchy
+            => but an **is-a** connection must be given
+        - Polymorphy
+    - Practical issues
+        - Constructor (ctor)
+            - standard constructor receive values for all attributes
+            - default constructor (w/o parameter) is automaticall given if no ctor is provided, but will vanish if at lease one ctor is given
+            - every other (overloaded) ctor will use the standard ctor (DRY - Don't repeat yourself)
+        - Self reference
+            - this : Reference to the own object in current context (class)
+            - super: Reference to the own object in parental context (base class)
+        - Access control
+            by providing Getter/Setter methods
+
+    E.g.
+        Writing a class (Ratio) for calculating with ratio numbers (fraction)
+        with two attributes: enumarator, denominator,
+        and some methods: add, sub, mult, div, reciprocal, reduce,
+        and two constructor with one and two parameters
+

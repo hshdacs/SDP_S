@@ -2,7 +2,7 @@ package ex06;
 
 public class Kingdom {
     public static void main(String[] args) {
-        Resident normalGuy = new Resident("Guy", 123);
+        Resident normalGuy = new Pawn("Normal Guy", 123);
         King meKing = new King("Charles", 5747);
 
         System.out.println("The resident pays " + normalGuy.taxes());

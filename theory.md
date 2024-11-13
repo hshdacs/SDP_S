@@ -225,3 +225,32 @@
             resident : king, noble, pawn
             pawn : adscript
         The resident is a class with two attributes (name, income), and has a method called "taxes()", which shows how much this resident has to pay tax!
+
+### Session 5
+13.11.2024
+
+- Object Oriented Programming
+    - Some remarks to the Kingdom
+        - abstract: class can only work as a base class,
+            and some methods can be defined but not implemented
+        - final: class cannot be inherited any further
+    
+    - Generics
+        aka Templates:
+        Some datatype is not known yet, and only available at declaration time.
+        Special syntax: <T>
+        e.g. ArrayList<T> someName = new ArrayList<>();
+        => Dynamic Array (Collections) add, insert, remove, get, set, empty, clear
+        and LinkedList<T>
+                        Create Read Update Delete
+        ArrayList         bad  good  good   bad
+        LinkedList        good bad   bad    good
+
+        base class: List<T> (interface) a behaviour
+
+    - Warning
+        Complex datatypes (reference datatypes, e.g. object, arrays) can NOT be
+        checked for equality with the "==" operator! This only works for the
+        primitive datatypes. You must use ".equals(..)" oder ".compareTo(..)"
+        instead!!
+        

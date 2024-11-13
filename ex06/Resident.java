@@ -1,6 +1,6 @@
 package ex06;
 
-public class Resident {
+public abstract class Resident {
     private String name;
     private int income;
 
@@ -8,6 +8,9 @@ public class Resident {
         this.name = name;
         this.income = income;
     }
+
+    // just an example
+//    public abstract int getSomething();
 
     public int getIncome() {
         return this.income;

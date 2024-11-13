@@ -102,7 +102,7 @@
                 otherwise: y = y - x
         - Flowchart
 
-        :::mermaid
+        ```mermaid
         flowchart TD
             Start --> id1
             id1{x != y} -- no --> Stop
@@ -111,7 +111,7 @@
             id2 -- no --> B[y = y - x]
             A --> id1
             B --> id1
-        :::
+        ```
 
         - Nassi-Schneiderman Diagram (Struktogramm)
     - Characteristics of Algorithms

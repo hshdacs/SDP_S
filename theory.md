@@ -101,6 +101,18 @@
                 if x > y : x = x - y
                 otherwise: y = y - x
         - Flowchart
+
+        :::mermaid
+        flowchart TD
+            Start --> id1
+            id1{x != y} -- no --> Stop
+            id1 -- yes --> id2{x > y}
+            id2 -- yes --> A[x = x - y]
+            id2 -- no --> B[y = y - x]
+            A --> id1
+            B --> id1
+        :::
+
         - Nassi-Schneiderman Diagram (Struktogramm)
     - Characteristics of Algorithms
         - Determinism

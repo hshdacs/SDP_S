@@ -2,8 +2,10 @@ package ex07.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Savepoint;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +40,7 @@ public class AccountDBbySQL implements AccountDAO {
             sqlConnection = DriverManager.getConnection("jdbc:mariadb://" +
                                     SQL_SERVER + ":" + SQL_SERVER_PORT + "/" +
                                     SQL_DATABASE, SQL_USERNAME, SQL_PASSWORD);
+            //sqlConnection.setAutoCommit(false);
         } catch (SQLException e) {
             System.err.println("Got some problem when establishing SQL connection");
             e.printStackTrace();
@@ -47,14 +50,41 @@ public class AccountDBbySQL implements AccountDAO {
 
     @Override
     public boolean insertAccount(Account account) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'insertAccount'");
+        // INSERT INTO account (number, owner, balance) VALUES (?, ?, ?);
+        try {
+            PreparedStatement sqlQuery = sqlConnection.prepareStatement(
+                "INSERT INTO account (number, owner, balance) VALUES (?, ?, ?)"
+            );
+            sqlQuery.setInt(1, account.getNumber() );
+            sqlQuery.setString(2, account.getOwner() );
+            sqlQuery.setDouble(3, account.getBalance() );
+            return sqlQuery.executeUpdate()==1;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     @Override
     public Account getAccountByID(int accountNumber) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAccountByID'");
+        try {
+            PreparedStatement sqlQuery = sqlConnection.prepareStatement(
+                "SELECT number,owner,balance FROM account WHERE number=?"
+            );
+            sqlQuery.setInt(1, accountNumber);
+            ResultSet sqlTable = sqlQuery.executeQuery();
+            if ( ! sqlTable.next() ) return null;
+
+            int number = sqlTable.getInt("number");
+            String owner = sqlTable.getString("owner");
+            double balance = sqlTable.getDouble("balance");
+            return new Account(number, owner, balance);
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override
@@ -87,14 +117,23 @@ public class AccountDBbySQL implements AccountDAO {
 
     @Override
     public boolean changeAccount(int accountNumber, Account account) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'changeAccount'");
+        removeAccount(accountNumber);
+        return insertAccount(account);
     }
 
     @Override
     public boolean removeAccount(int accountNumber) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeAccount'");
+        // DELETE FROM account WHERE number = ?
+        try {
+            PreparedStatement sqlQuery = sqlConnection.prepareStatement(
+                "DELETE FROM account WHERE number = ?"
+            );
+            sqlQuery.setInt(1, accountNumber);
+            return sqlQuery.executeUpdate() == 1;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
-
 }

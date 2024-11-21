@@ -1,7 +1,9 @@
-package ex07;
+package ex07.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import ex07.model.Account;
 
 public class AccountDBinMemory implements AccountDAO {
     // this is executed before CTOR (pre-CTOR)

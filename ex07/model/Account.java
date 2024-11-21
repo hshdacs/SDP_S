@@ -1,4 +1,4 @@
-package ex07;
+package ex07.model;
 
 public class Account {
     private int number;

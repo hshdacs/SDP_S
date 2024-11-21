@@ -254,3 +254,10 @@
         primitive datatypes. You must use ".equals(..)" oder ".compareTo(..)"
         instead!!
         
+### Session 6
+21.11.2024
+
+- Some design principles
+    - KISS
+        Keep it simple [and] stupid
+        

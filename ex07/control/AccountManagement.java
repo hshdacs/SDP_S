@@ -1,10 +1,16 @@
-package ex07;
+package ex07.control;
 
 import java.util.Scanner;
 
+import ex07.dao.AccountDAO;
+import ex07.dao.AccountDBbySQL;
+import ex07.dao.AccountDBinMemory;
+import ex07.model.Account;
+
 public class AccountManagement {
     public static void main(String[] args) {
-        AccountDAO accountDB = new AccountDBinMemory();
+        //AccountDAO accountDB = new AccountDBinMemory();
+        AccountDAO accountDB = new AccountDBbySQL();
 
         Scanner input = new Scanner(System.in);
     mainloop:

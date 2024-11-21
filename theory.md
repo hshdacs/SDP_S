@@ -258,6 +258,7 @@
 21.11.2024
 
 - Some design principles
-    - KISS
+    - KISS (most **important** principle ever)
         Keep it simple [and] stupid
-        
+    - DRY (least important principle)
+        Don't repeat yourself

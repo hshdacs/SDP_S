@@ -262,3 +262,16 @@
         Keep it simple [and] stupid
     - DRY (least important principle)
         Don't repeat yourself
+
+### Session 7
+28.11.2024
+
+- Current program flow
+    - Input
+    - Processing
+    - Output
+
+- Graphical program flow
+    - Setup
+    - Waiting for Events
+    - Handling the Events (Observer/Listener)

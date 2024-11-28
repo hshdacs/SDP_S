@@ -3,7 +3,7 @@ package ex09.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import ex07.model.Account;
+import ex09.model.Account;
 
 public class AccountDBinMemory implements AccountDAO {
     // this is executed before CTOR (pre-CTOR)
@@ -55,14 +55,18 @@ public class AccountDBinMemory implements AccountDAO {
 
     @Override
     public boolean changeAccount(int accountNumber, Account account) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'changeAccount'");
+        removeAccount(accountNumber);
+        return insertAccount(account);
     }
 
     @Override
     public boolean removeAccount(int accountNumber) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeAccount'");
+        for (int index = 0; index < accountList.size(); index++) {
+            if (accountList.get(index).getNumber() == accountNumber) {
+                accountList.remove(index);
+                return true;
+            }
+        }
+        return false;
     }
-
 }

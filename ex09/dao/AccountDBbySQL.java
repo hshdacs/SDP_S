@@ -10,7 +10,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import ex07.model.Account;
+import ex09.model.Account;
 
 public class AccountDBbySQL implements AccountDAO {
 

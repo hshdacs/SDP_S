@@ -1,7 +1,7 @@
 package ex09.dao;
 
 import java.util.List;
-import ex07.model.Account;
+import ex09.model.Account;
 
 // this is the Account Data Access Object
 public interface AccountDAO {

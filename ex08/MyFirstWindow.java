@@ -1,17 +1,23 @@
 package ex08;
 
-import java.awt.LayoutManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 import java.awt.*;
 
 public class MyFirstWindow extends JFrame {
+
+    private JTextField someTextField = new JTextField();
+    private JCheckBox someQuestionCheckBox = new JCheckBox();
 
     public class ExitButtonClass implements ActionListener {
 
@@ -32,8 +38,20 @@ public class MyFirstWindow extends JFrame {
 
         add(new JLabel("Hello World"), BorderLayout.NORTH );
 
+        JPanel centerPanel = new JPanel(new GridLayout(2, 2));
+        centerPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+        add( centerPanel, BorderLayout.CENTER );
+
+        // first element to be placed at row 0, col 0
+        centerPanel.add( new JLabel("Some Text") );
+        centerPanel.add( someTextField );
+        centerPanel.add( new JLabel("Some Question") );
+        centerPanel.add( someQuestionCheckBox );
+
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        bottomPanel.add( new JButton("Click me") );
+        JButton clickMeButton = new JButton("Click me");
+        bottomPanel.add( clickMeButton );
+        clickMeButton.addActionListener(this::clickMeButtonOnClick);
 
         JButton exitButton = new JButton("Exit");
         bottomPanel.add( exitButton );
@@ -64,7 +82,17 @@ public class MyFirstWindow extends JFrame {
         add(bottomPanel, BorderLayout.SOUTH);
         //add( new JButton("Click me"), BorderLayout.SOUTH );
 
+        pack();
         setVisible(true);
+    }
+
+    private void clickMeButtonOnClick(ActionEvent e) {
+        String someText = someTextField.getText();
+        boolean someQuestion = someQuestionCheckBox.isSelected();
+
+        JOptionPane.showMessageDialog(this, someText, "Let me tell you",
+            someQuestion ? JOptionPane.WARNING_MESSAGE : JOptionPane.INFORMATION_MESSAGE
+            );
     }
 
     private void buttonExitOnClick(ActionEvent e) {

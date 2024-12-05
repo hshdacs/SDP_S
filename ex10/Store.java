@@ -11,6 +11,9 @@ public class Store {
         return stock;
     }
 
+    // !! ATTENTION !!
+    // add "synchronized" to fix the lost update
+    // -> causes longer execution time
     public void deliver(int amount) {
         stock += amount;
     }

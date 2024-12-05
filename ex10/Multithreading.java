@@ -10,6 +10,7 @@ public class Multithreading {
         Thread t1 = new Thread(l1);
         Thread t2 = new Thread(l2);
 
+        long startTime = System.currentTimeMillis();
         System.out.println( "Starting stock: " + store.getStock() );
         t1.start();
         t2.start();
@@ -23,7 +24,10 @@ public class Multithreading {
         t1.join();
         t2.join();
 
+        long stopTime = System.currentTimeMillis();
         System.out.println( "Final stock: " + store.getStock() );
+        long diffTime = stopTime - startTime;
+        System.out.println("takes " + diffTime + "ms");
     }
             
     private static double performAction(int i) {

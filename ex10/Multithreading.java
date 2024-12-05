@@ -31,6 +31,7 @@ public class Multithreading {
     }
             
     private static double performAction(int i) {
+        // just do some (useless) calculation
         return Math.pow(2, i);
     }
 }

@@ -57,12 +57,14 @@
     - 8/16/32 Bit : char
         (a single character of a text)
 - Operation
+    ```
     =,
     +, -, /, *, %,
     ++, --,
     +=, -=, /=, *=, %=,
     &, |, ^, !, &&, ||,
     ==, !=, <=, >=
+    ```
 - Algorithm
     - Sequence
     - Condition (if, switch)
@@ -86,20 +88,23 @@
     that measures both of the previous.
     aka GCD (greates common divider)
     e.g. (a,b) = 24, (c,d) = 16
-    1) 24 != 16
-    2) 24 > 16
-    3) (a,b) set to 24 - 16 = 8
-    4) 8 != 16
-    5) 8 < 16
-    6) (c,d) set to 16 - 8 = 8
-    7) 8 == 8
+    1. 24 != 16
+    2. 24 > 16
+    3. (a,b) set to 24 - 16 = 8
+    4. 8 != 16
+    5. 8 < 16
+    6. (c,d) set to 16 - 8 = 8
+    7. 8 == 8
+
     - Formalism of Algorithms
         - Pseudo Code
             (in theory there is no rule for pseudo code, but use same words for the single steps of the algorithm)
+            ```
             (a, b) => x, (c, d) => y
             while x != y
                 if x > y : x = x - y
                 otherwise: y = y - x
+            ```
         - Flowchart
 
         ```mermaid
@@ -112,8 +117,9 @@
             A --> id1
             B --> id1
         ```
-
         - Nassi-Schneiderman Diagram (Struktogramm)
+        ![Euclidian Algorithm](euclid.png)
+
     - Characteristics of Algorithms
         - Determinism
         - Determination
@@ -133,11 +139,11 @@
     - Exercise 1
         Collatz - Number/Sequence
         there is some integer n
-
+        ```
         while (n != 1)
             if (n is even): n = n/2
             otherwise: n = 3*n + 1
-
+        ```
         The big question is, will this algorith terminate for
         every number of n?
 
@@ -149,11 +155,13 @@
 
         Write a guessing game, where the computer randomly choose
         a secret number and the user can guess this number
+
         a) let the user know if the number is lower or higher
+        
         b) MasterMind:
-            - give a star (*) when a digit is correct and in its correct position
+            - give a star (*) when a   digit is correct and in its correct position
             - give a circle (o) when a digit is present, but on a wrong position
-            e.g. secret number is 4713, guess uis 2739: *o--
+            e.g. secret number is 4713, guess is 2739: *o--
 
 ### Session 4
 06.11.2024
@@ -170,8 +178,10 @@
     - Methods
         - Structure: Head Body
             - Head: Signature and some other stuff
+                ```
                 e.g. public static void main(String[] args)
                      ------------------ +++++++++++++
+                ```
                 Signature: Name of method + Datatypes of Parameters
             - Body enclosed in curly brackets (can be omitted)
         - Call paradigms
@@ -207,12 +217,14 @@
         - Access control
             by providing Getter/Setter methods
 
+    ```
     E.g.
         Writing a class (Ratio) for calculating with ratio numbers (fraction)
         with two attributes: enumarator, denominator,
         and some methods: add, sub, mult, div, reciprocal, reduce,
         and two constructor with one and two parameters
-
+    ```
+    ```
     Exercise 3 : Kingdom
         In a kingdom there are residents who must pay taxes, at 1/10 of its income,
         but at least 1 coin.
@@ -225,6 +237,7 @@
             resident : king, noble, pawn
             pawn : adscript
         The resident is a class with two attributes (name, income), and has a method called "taxes()", which shows how much this resident has to pay tax!
+    ```
 
 ### Session 5
 13.11.2024
@@ -238,6 +251,7 @@
     - Generics
         aka Templates:
         Some datatype is not known yet, and only available at declaration time.
+        ```
         Special syntax: <T>
         e.g. ArrayList<T> someName = new ArrayList<>();
         => Dynamic Array (Collections) add, insert, remove, get, set, empty, clear
@@ -247,6 +261,7 @@
         LinkedList        good bad   bad    good
 
         base class: List<T> (interface) a behaviour
+        ```
 
     - Warning
         Complex datatypes (reference datatypes, e.g. object, arrays) can NOT be

@@ -111,8 +111,8 @@ public class MainController {
 
     public static void main(String[] args) {
         new MainController(
-            new AccountDBinMemory(),
-//            new AccountDBbySQL(),
+//            new AccountDBinMemory(),
+            new AccountDBbySQL(),
             new MainView()
         );
     }
